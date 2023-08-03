@@ -35,6 +35,11 @@ This results in
 ```
 ## Input and Output
 ```Python
-np.loadtxt()
-np.savetxt()
+# CSV format
+df.load_csv()
+df.to_csv()
+
+# Excel format
+df.load_excel()
+df.to_excel()
 ```
