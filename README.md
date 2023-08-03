@@ -8,11 +8,23 @@ python pip install pandas
 import pandas as pd
 ```
 ## Series
-A series is the basic one-dimensional data structure in pandas
+A series is the basic one-dimensional data structure in pandas. The constainer consists of an axis label and a numpy array structure.
+
+In general, a pandas series can be created using the corresponding constructor
 ```Python
-s = pd.Series([1, 2, 3])
+class pandas.Series(data=None,
+  		    index=None,
+		    dtype=None,
+		    name=None,
+	            copy=None,
+		    fastpath=False)
 ```
-This results in 
+Examples
+```Python
+s1 = pd.Series([1, 2, 3])
+s2 = 0
+```
+The output of a series looks as follows
 ```
 0    1
 1    2
@@ -20,7 +32,17 @@ This results in
 dtype: int64
 ```
 ## Data Frame creation
-A data frame is the basic two-dimensional data structure in pandas
+A data frame is the basic two-dimensional tabular data structure in pandas. The container consists of an index for rows and columns, respectively.
+
+The constructor of a pandas data frame is given as follows
+```Python
+class pandas.DataFrame(data=None,
+		       index=None,
+		       columns=None,
+		       dtype=None,
+		       copy=None)
+```
+
 ```Python
 df = pd.DataFrame(data={"name": ["A", "B", "C"],
                         "weight": [5, -2, 3],
