@@ -12,14 +12,26 @@ A series is the basic one-dimensional data structure in pandas. The constainer c
 
 In general, a pandas series can be created using the corresponding constructor
 ```Python
-class pandas.Series(data=None,
-  		    index=None,
-		    dtype=None,
-		    name=None,
-	            copy=None,
+class pandas.Series(data=None,		# array-like, Iterable, dict, scalar value
+  		    index=None,		# array-like of Index (1-dim)
+		    dtype=None,		# str, np.dtype, ExtensionDtype, optional
+		    name=None,		# Hashable, default None
+	            copy=None,		# bool, default False 
 		    fastpath=False)
 ```
-Examples
+### Series Index
+The index of a series can be extracted as follows
+```Python
+pd.Series({"a": 1, "b": 2, "c": 5}).index 	# Index(['a', 'b', 'c'], dtype='object')
+pd.Series([1, 2, 3]).index 			# RangeIndex(start=0, stop=3, step=1)
+```
+### Extract Values
+Values can be extracted via
+```Python
+s = pd.Series({"a": 1, "b": 2, "c": 5})
+s_vals = s.values # array([1, 2, 5], dtype=int64)
+```
+#### Examples
 ```Python
 s1 = pd.Series([1, 2, 3])
 s2 = 0
