@@ -33,6 +33,26 @@ This results in
 1	B	-2	9.24
 2	C	3	-0.12
 ```
+### Joining Data Frames
+Data Frames can be joined with "merge". The syntax is as follows
+```Python
+DataFrame.merge(right,
+                how='inner',
+                on=None,
+                left_on=None,
+ 		right_on=None,
+		left_index=False,
+		right_index=False,
+		sort=False,
+		suffixes=('_x', '_y'),
+		copy=None,
+		indicator=False,
+		validate=None)
+```
+Example for a merge
+```Python
+df_merged = df1.merge(df2, how="left", on="a")
+```
 ## Input and Output
 ```Python
 # CSV format
@@ -43,3 +63,5 @@ df.to_csv()
 df.load_excel()
 df.to_excel()
 ```
+## References
+The pandas documentation can be found on: [https://pandas.pydata.org/docs/index.html](https://pandas.pydata.org/docs/index.html)
