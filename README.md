@@ -75,7 +75,7 @@ df["weight_double"] = df["factor"] * df["weight"]
 ```
 resulting in
 ```
-name	weight	abs	factor	weight_double
+    name	weight	abs	factor	weight_double
 0	A	5	1.25	2.0	10.0
 1	B	-2	9.24	2.0	-4.0
 2	C	3	-0.12	2.0	6.0
@@ -85,9 +85,21 @@ We can rename columns as follows
 ```Python
 df.rename(columns={"factor": "weight_factor"})
 ```
-Resulting in 
 ```
-
+	name	weight	abs	weight_factor	weight_double
+0	A	5	1.25	2.0		10.0
+1	B	-2	9.24	2.0		-4.0
+2	C	3	-0.12	2.0		6.0
+```
+### Filter
+We can filter rows based on conditions as follows
+```Python
+df_filter = df[df["name"] == "A"].copy()
+```
+```
+df_filter
+	name	weight	abs	factor	weight_double
+0	A	5	1.25	2.0	10.0
 ```
 ### Joining Data Frames
 Data Frames can be joined with "merge". The syntax is as follows
