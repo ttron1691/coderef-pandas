@@ -1,7 +1,7 @@
 # Code Reference for Pandas
 ## Install Packages
 ```Bash
-python pip install pandas
+python -m pip install pandas
 ```
 ## Include Packages
 ```Python
@@ -43,7 +43,7 @@ The output of a series looks as follows
 2    3
 dtype: int64
 ```
-## Data Frame creation
+## Data Frame
 A data frame is the basic two-dimensional tabular data structure in pandas. The container consists of an index for rows and columns, respectively.
 
 The constructor of a pandas data frame is given as follows
@@ -66,6 +66,28 @@ This results in
 0	A	5	1.25
 1	B	-2	9.24
 2	C	3	-0.12
+```
+### Add columns
+We can add columns via
+```Python
+df["factor"] = 2.0
+df["weight_double"] = df["factor"] * df["weight"]
+```
+resulting in
+```
+name	weight	abs	factor	weight_double
+0	A	5	1.25	2.0	10.0
+1	B	-2	9.24	2.0	-4.0
+2	C	3	-0.12	2.0	6.0
+```
+### Rename
+We can rename columns as follows
+```Python
+df.rename(columns={"factor": "weight_factor"})
+```
+Resulting in 
+```
+
 ```
 ### Joining Data Frames
 Data Frames can be joined with "merge". The syntax is as follows
