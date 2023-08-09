@@ -19,6 +19,30 @@ class pandas.Series(data=None,		# array-like, Iterable, dict, scalar value
 	            copy=None,		# bool, default False 
 		    fastpath=False)
 ```
+A few examples for pandas series
+```Python
+s1 = pd.Series([1, 3, 5, np.nan, 6, 8])
+s2 = pd.Series(np.array([2, 5, 8]), index=["a", "b", "c"])
+```
+This results in
+```
+s1
+0    1.0
+1    3.0
+2    5.0
+3    NaN
+4    6.0
+5    8.0
+dtype: float64
+```
+and
+```
+s2
+a    2
+b    5
+c    8
+dtype: int32
+```
 ### Series Index
 The index of a series can be extracted as follows
 ```Python
