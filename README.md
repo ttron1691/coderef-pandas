@@ -19,6 +19,8 @@ class pandas.Series(data=None,		# array-like, Iterable, dict, scalar value
 	            copy=None,		# bool, default False 
 		    fastpath=False)
 ```
+Basically, a series is created via the constructor as follows
+
 A few examples for pandas series
 ```Python
 s1 = pd.Series([1, 3, 5, np.nan, 6, 8])
@@ -43,17 +45,28 @@ b    5
 c    8
 dtype: int32
 ```
-### Series Index
-The index of a series can be extracted as follows
+Additionally, a series can be created from a dictionary
+```Python
+s3 = pd.Series({"b": 1, "a": 0, "c": 2})
+```
+### Index and Values
+The index and values of a series can be extracted as follows
 ```Python
 pd.Series({"a": 1, "b": 2, "c": 5}).index 	# Index(['a', 'b', 'c'], dtype='object')
 pd.Series([1, 2, 3]).index 			# RangeIndex(start=0, stop=3, step=1)
+
+pd.Series({"a": 1, "b": 2, "c": 5}).values	# array([1, 2, 5], dtype=int64)
+pd.Series([1, 2, 3]).values			# array([1, 2, 3], dtype=int64)
 ```
-### Extract Values
-Values can be extracted via
+### Value extraction
+Values of a series can be extracted as follows
 ```Python
-s = pd.Series({"a": 1, "b": 2, "c": 5})
-s_vals = s.values # array([1, 2, 5], dtype=int64)
+s4 = pd.Series(np.array([2.0, 5.3]))
+s4[1]	# 5.3
+
+s5 = pd.Series({"a": 1, "b": -2.5})
+s5[0]	# 1.0
+s5["b"] # -2.5
 ```
 #### Examples
 ```Python
