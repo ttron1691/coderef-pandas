@@ -117,6 +117,16 @@ resulting in
 1	B	-2	9.24	2.0	-4.0
 2	C	3	-0.12	2.0	6.0
 ```
+We can use the assign and apply methods to create new columns by applying a function to a given column
+```Python
+df_assigned = df.assign(new_column=df["old_column"].apply(my_function))
+df_flag = df.assign(column_flag=df["old_column"].isin(arr_values))
+df_where = df.assign(np.where(df["column_valid"], df["value_valid"], "value_not_valid"))
+```
+We can also include lambda functions as well
+```Python
+df_lambda = df["new_column"].apply(lambda x: my_function(x) if isinstance(x, str) else "")
+```
 ### Rename
 We can rename columns as follows
 ```Python
@@ -137,6 +147,11 @@ df_filter = df[df["name"] == "A"].copy()
 df_filter
 	name	weight	abs	factor	weight_double
 0	A	5	1.25	2.0	10.0
+```
+### Filling NA values
+In order to fill NA values we can use the following procedure
+```Python
+df["filled_na"] = df["col_with_na"].fillna("to be done")
 ```
 ### Joining Data Frames
 Data Frames can be joined with "merge". The syntax is as follows
