@@ -170,8 +170,31 @@ DataFrame.merge(right,
 		validate=None)
 ```
 Example for a merge
-```Python
-df_merged = df1.merge(df2, how="left", on="a")
+```
+df_1 = pd.DataFrame({"id": [1, 2, 3],
+                     "value": ["a", "b", "c"]})
+df_2 = pd.DataFrame({"id": [2, 3, 4],
+                     "value_2": ["d", "e", "f"]})
+df_3 = df_1.merge(df_2, how="inner", on="id")
+```
+This results in
+```
+df_1
+ 	id	value_1
+0	1	a
+1	2	b
+2	3	c
+
+df_2
+        id	value_2
+0	2	d
+1	3	e
+2	4	f
+
+df_3
+	id	value_1	value_2
+0	2	b	d
+1	3	c	e
 ```
 ## Input and Output
 ```Python
