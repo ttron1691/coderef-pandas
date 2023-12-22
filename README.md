@@ -22,7 +22,7 @@ class pandas.Series(data=None,		# array-like, Iterable, dict, scalar value
 We now show several examples for the creation of series in pandas
 ```Python
 s1 = pd.Series([1, 3, 5, np.nan, 6, 8])
-s2 = pd.Series(np.array([2, 5, 8]), index=["a", "b", "c"])
+s2 = pd.Series(data=np.array([2, 5, 8]), index=["a", "b", "c"])
 ```
 This results in
 ```
@@ -46,6 +46,15 @@ dtype: int32
 Additionally, a series can be created from a dictionary
 ```Python
 s3 = pd.Series({"b": 1, "a": 0, "c": 2})
+```
+### Attributes
+```Python
+Series.index			# The index (axis labels) of the Series
+Series.values			# Return Series as ndarray or ndarray-like depending on the dtype
+Series.dtype			# Return the dtype object of the underlying data
+Series.hasnans			# Return True if there are any NaNs
+Series.dtypes			# Return the dtype object of the underlying data
+Series.index			# The index (axis labels) of the Series
 ```
 ### Index and Values
 The index and values of a series can be extracted as follows
