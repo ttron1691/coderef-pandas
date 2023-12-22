@@ -85,13 +85,13 @@ A data frame is the basic two-dimensional tabular data structure in pandas. The 
 
 The constructor of a pandas data frame is given as follows
 ```Python
-class pandas.DataFrame(data=None,
-		       index=None,
-		       columns=None,
-		       dtype=None,
-		       copy=None)
+class pandas.DataFrame(data=None,	# ndarray (structured or homogeneous), Iterable, dict, or DataFrame
+		       index=None,	# Index or array-like
+		       columns=None,	# Index or array-like
+		       dtype=None,	# dtype, default None
+		       copy=None)	# bool or None, default None
 ```
-
+As an example we consider the following data frame
 ```Python
 df = pd.DataFrame(data={"name": ["A", "B", "C"],
                         "weight": [5, -2, 3],
@@ -104,6 +104,30 @@ This results in
 1	B	-2	9.24
 2	C	3	-0.12
 ```
+Furthermore, we can create data frames as follows
+```Python
+d = {"column_1": [1, 2], "column_2": [3, 4]}
+df2 = pd.DataFrame(data=d)
+```
+### Attributes
+```Python
+DataFrame.index			# The index (row labels) of the DataFrame
+DataFrame.columns		# The column labels of the DataFrame.
+DataFrame.index			# A
+DataFrame.index			# A
+DataFrame.index			# A
+DataFrame.index			# A
+DataFrame.index			# A
+DataFrame.index			# A
+DataFrame.index			# A
+DataFrame.index			# A
+DataFrame.index			# A
+DataFrame.index			# A
+DataFrame.index			# A
+DataFrame.index			# A
+```
+### Methods
+
 ### Add columns
 We can add columns via
 ```Python
