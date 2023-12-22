@@ -300,6 +300,11 @@ DatetimeIndex(['2018-10-26 12:00:00-05:00', '2018-10-26 13:00:00-05:00'],
 DatetimeIndex(['2018-01-01', '2018-01-02', '2018-01-03', '2018-01-04',
                '2018-01-05', '2018-01-06', '2018-01-07', '2018-01-08'],
               dtype='datetime64[ns]', freq='D')
+
+>>> pd.date_range(start='1/1/2018', periods=8)
+DatetimeIndex(['2018-01-01', '2018-01-02', '2018-01-03', '2018-01-04',
+               '2018-01-05', '2018-01-06', '2018-01-07', '2018-01-08'],
+              dtype='datetime64[ns]', freq='D')
 ```
 ## References
 The pandas documentation can be found on: [https://pandas.pydata.org/docs/index.html](https://pandas.pydata.org/docs/index.html)
