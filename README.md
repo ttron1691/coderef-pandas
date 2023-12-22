@@ -275,5 +275,31 @@ df.to_csv()
 df.load_excel()
 df.to_excel()
 ```
+## General functions
+### Data manipulation
+We list general functions for data manipulation in the following
+```Python
+melt(frame[, id_vars, value_vars, var_name, ...])			# Unpivot a DataFrame from wide to long format, optionally leaving identifiers set
+pivot(data, *, columns[, index, values])				# Return reshaped DataFrame organized by given index / column values
+merge(left, right[, how, on, left_on, ...])				# Merge DataFrame or named Series objects with a database-style join
+concat(objs, *[, axis, join, ignore_index, ...])			# Concatenate pandas objects along a particular axis
+```
+### Timelike data handling
+```Python
+to_datetime(arg[, errors, dayfirst, ...])				# Convert argument to datetime
+to_timedelta(arg[, unit, errors])					# A
+date_range([start, end, periods, freq, tz, ...])			# A
+```
+Examples
+```
+>>> pd.to_datetime(['2018-10-26 12:00 -0500', '2018-10-26 13:00 -0500'])
+DatetimeIndex(['2018-10-26 12:00:00-05:00', '2018-10-26 13:00:00-05:00'],
+              dtype='datetime64[ns, UTC-05:00]', freq=None)
+
+>>> pd.date_range(start='1/1/2018', end='1/08/2018')
+DatetimeIndex(['2018-01-01', '2018-01-02', '2018-01-03', '2018-01-04',
+               '2018-01-05', '2018-01-06', '2018-01-07', '2018-01-08'],
+              dtype='datetime64[ns]', freq='D')
+```
 ## References
 The pandas documentation can be found on: [https://pandas.pydata.org/docs/index.html](https://pandas.pydata.org/docs/index.html)
