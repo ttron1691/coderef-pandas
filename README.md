@@ -56,6 +56,14 @@ Series.hasnans			# Return True if there are any NaNs
 Series.dtypes			# Return the dtype object of the underlying data
 Series.index			# The index (axis labels) of the Series
 ```
+### Conversion
+```Python
+Series.copy([deep])				# Make a copy of this object's indices and data
+Series.to_numpy([dtype, copy, na_value])	# A NumPy ndarray representing the values in this Series or Index
+Series.to_period([freq, copy])			# Convert Series from DatetimeIndex to PeriodIndex
+Series.to_timestamp([freq, how, copy])		# Cast to DatetimeIndex of Timestamps, at beginning of period
+Series.to_list()				# Return a list of the values
+```
 ### Index and Values
 The index and values of a series can be extracted as follows
 ```Python
