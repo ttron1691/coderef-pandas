@@ -19,9 +19,7 @@ class pandas.Series(data=None,		# array-like, Iterable, dict, scalar value
 	            copy=None,		# bool, default False 
 		    fastpath=False)
 ```
-Basically, a series is created via the constructor as follows
-
-A few examples for pandas series
+We now show several examples for the creation of series in pandas
 ```Python
 s1 = pd.Series([1, 3, 5, np.nan, 6, 8])
 s2 = pd.Series(np.array([2, 5, 8]), index=["a", "b", "c"])
