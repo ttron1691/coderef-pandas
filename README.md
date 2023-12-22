@@ -117,6 +117,18 @@ The output of a series looks as follows
 2    3
 dtype: int64
 ```
+## Indexes
+An index is an immutable sequence used for indexing and alignment. 
+
+The constructor of a pandas index looks as follows
+```Python
+class pandas.Index(data=None,		# array-like (1-dimensional)
+                   dtype=None,		# NumPy dtype (default: object)
+                   copy=False,		# bool
+                   name=None,		# object
+                   tupleize_cols=True	# bool (default: True)
+                  )
+```
 ## Data Frame
 A data frame is the basic two-dimensional tabular data structure in pandas. The container consists of an index for rows and columns, respectively.
 
