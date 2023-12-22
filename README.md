@@ -64,6 +64,13 @@ Series.to_period([freq, copy])			# Convert Series from DatetimeIndex to PeriodIn
 Series.to_timestamp([freq, how, copy])		# Cast to DatetimeIndex of Timestamps, at beginning of period
 Series.to_list()				# Return a list of the values
 ```
+### Indexing, iteration
+```Python
+Series.at					# Access a single value for a row/column label pair
+Series.iat					# Access a single value for a row/column pair by integer position
+Series.loc					# Access a group of rows and columns by label(s) or a boolean array
+Series.iloc					# Purely integer-location based indexing for selection by position
+```
 ### Index and Values
 The index and values of a series can be extracted as follows
 ```Python
