@@ -163,8 +163,16 @@ DataFrame.iat			# Access a single value for a row/column pair by integer positio
 DataFrame.loc			# Access a group of rows and columns by label(s) or a boolean array
 DataFrame.iloc			# Purely integer-location based indexing for selection by position
 ```
-### Methods
-
+### General methods
+```Python
+pivot(data, *, columns[, index, values])			# Return reshaped DataFrame organized by given index / column values
+pivot_table(data[, values, index, columns, ...])		# Create a spreadsheet-style pivot table as a DataFrame
+merge(left, right[, how, on, left_on, ...])			# Merge DataFrame or named Series objects with a database-style join
+concat(objs, *[, axis, join, ignore_index, ...])		# Concatenate pandas objects along a particular axis
+```
+### Handle missing data
+```Python
+```
 ### Add columns
 We can add columns via
 ```Python
