@@ -112,19 +112,19 @@ df2 = pd.DataFrame(data=d)
 ### Attributes
 ```Python
 DataFrame.index			# The index (row labels) of the DataFrame
-DataFrame.columns		# The column labels of the DataFrame.
-DataFrame.index			# A
-DataFrame.index			# A
-DataFrame.index			# A
-DataFrame.index			# A
-DataFrame.index			# A
-DataFrame.index			# A
-DataFrame.index			# A
-DataFrame.index			# A
-DataFrame.index			# A
-DataFrame.index			# A
-DataFrame.index			# A
-DataFrame.index			# A
+DataFrame.columns		# The column labels of the DataFrame
+DataFrame.dtypes		# Return the dtypes in the DataFrame
+DataFrame.values		# Return a Numpy representation of the DataFrame
+DataFrame.shape			# Return a tuple representing the dimensionality of the DataFrame
+```
+### Indexing
+```Python
+DataFrame.head([n])		# Return the first n rows
+DataFrame.tail([n])		# Return the last n rows
+DataFrame.at			# Access a single value for a row/column label pair
+DataFrame.iat			# Access a single value for a row/column pair by integer position
+DataFrame.loc			# Access a group of rows and columns by label(s) or a boolean array
+DataFrame.iloc			# Purely integer-location based indexing for selection by position
 ```
 ### Methods
 
