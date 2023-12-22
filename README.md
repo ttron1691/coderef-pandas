@@ -71,6 +71,21 @@ Series.iat					# Access a single value for a row/column pair by integer position
 Series.loc					# Access a group of rows and columns by label(s) or a boolean array
 Series.iloc					# Purely integer-location based indexing for selection by position
 ```
+### Reindexing, selection, label manipulation, missing data handling
+```Python
+Series.head([n])					# Return the first n rows
+Series.drop_duplicates(*[, keep, inplace, ...])		# Return Series with duplicate values removed
+Series.duplicated([keep])				# Indicate duplicate Series values
+Series.isin(values)					# Whether elements in Series are contained in values
+Series.tail([n])					# Return the last n rows
+Series.dropna(*[, axis, inplace, how, ...])		# Return a new Series with missing values removed
+Series.ffill(*[, axis, inplace, limit, downcast])	# Fill NA/NaN values by propagating the last valid observation to next valid
+Series.fillna([value, method, axis, ...])		# Fill NA/NaN values using the specified method
+Series.isna()						# Detect missing values
+Series.isnull()						# Series.isnull is an alias for Series.isna
+Series.notna()						# Detect existing (non-missing) values
+Series.notnull()					# Series.notnull is an alias for Series.notna
+```
 ### Index and Values
 The index and values of a series can be extracted as follows
 ```Python
