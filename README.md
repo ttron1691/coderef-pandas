@@ -200,7 +200,12 @@ resulting in
 ```
 We can use the assign and apply methods to create new columns by applying a function to a given column
 ```Python
-df_assigned = df.assign(new_column=df["old_column"].apply(my_function))
+# Loc
+df.loc[:, "value"] = df["squared_value"].apply(lambda x: x*x)
+
+# Assign
+df_assigned_one = df.assign(new_variable="empty")
+df_assigned_two = df.assign(new_column=df["old_column"].apply(my_function))
 df_flag = df.assign(column_flag=df["old_column"].isin(arr_values))
 df_where = df.assign(np.where(df["column_valid"], df["value_valid"], "value_not_valid"))
 ```
