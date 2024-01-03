@@ -278,29 +278,93 @@ df_3
 1	3	c	e
 ```
 ## Input and Output
+### Pickling
 ```Python
-# CSV format
-df.load_csv()
-df.to_csv()
+pd.read_pickle(filepath_or_buffer[, ...])               # Load pickled pandas object
+DataFrame.to_pickle(path[, compression, ...])           # Pickle (serialize) object to file
+```
+### Flat file
+```Python
+# Table
+pd.read_table(filepath_or_buffer, *[, sep, ...])        # Read a table data format
 
-# Excel format
-df.load_excel()
-df.to_excel()
+# CSV
+pd.read_csv(filepath_or_buffer, *[, sep, ...])          # Read CSV data
+DataFrame.to_csv([path_or_buf, sep, na_rep, ...])       # Write CSV data
+```
+### JSON
+```Python
+pd.read_json(path_or_buf, *[, orient, typ, ...])        # Convert a JSON string to pandas object
+DataFrame.to_json([path_or_buf, orient, ...])           # Convert the object to a JSON string
+```
+### Excel
+```Python
+pd.read_excel(io[, sheet_name, header, names, ...])     # Read an Excel file into a DataFrame
+DataFrame.to_excel(excel_writer[, ...])                 # Write object to an Excel sheet
+```
+### HTML
+```Python
+pd.read_html(io, *[, match, flavor, header, ...])       # Read an Excel file into a DataFrame
+DataFrame.to_html([buf, columns, col_space, ...])       # Write object to an Excel sheet
+```
+### XML
+### HDFStore
+### Parquet
+```Python
+pd.read_parquet(path[, engine, columns, ...])           # Load a parquet object from the file path, returning a DataFrame
+DataFrame.to_parquet([path, engine, ...])               # Write a DataFrame to the binary parquet format
+```
+### SQL
+### Examples
+Examples for reading files
+```Python
+# Read CSV file
+df_csv = pd.read_csv("tmp.csv")
+
+# Read Excel file
+df_excel = pd.read_excel("tmp.xlsx", sheet_name="FirstSheet")
+df_excel = pd.read_excel("tmp.xlsx", index_col=0, dtype={"Name": str, "Value": float})
+df_excel = pd.read_excel(open("tmp.xlsx", "rb"), sheet_name="SecondSheet")
+```
+Examples for writing files
+```Python
+# Write output
+df_out = pd.DataFrame([['a', 'b'], ['c', 'd']],
+                      index=['row 1', 'row 2'],
+                      columns=['col 1', 'col 2'])
+# Write CSV
+df_out.to_csv(index=False)
+
+# Write Excel
+df_out.to_excel("output.xlsx", sheet_name="Sheet_Name_1")  
+```
+Creating directories for the output
+```Python
+# Pathlib
+from pathlib import Path
+filepath = Path("folder/subfolder/output.csv")
+filepath.parent.mkdir(parents=True, exists_ok=True)
+df_out.to_csv(filepath)
+
+# OS
+import os
+os.makedirs("folder/subfolder", exists_ok=True)
+df_out.to_csv("folder/subfolder/output.csv")
 ```
 ## General functions
 ### Data manipulation
 We list general functions for data manipulation in the following
 ```Python
 melt(frame[, id_vars, value_vars, var_name, ...])			# Unpivot a DataFrame from wide to long format, optionally leaving identifiers set
-pivot(data, *, columns[, index, values])				# Return reshaped DataFrame organized by given index / column values
-merge(left, right[, how, on, left_on, ...])				# Merge DataFrame or named Series objects with a database-style join
+pivot(data, *, columns[, index, values])				    # Return reshaped DataFrame organized by given index / column values
+merge(left, right[, how, on, left_on, ...])				    # Merge DataFrame or named Series objects with a database-style join
 concat(objs, *[, axis, join, ignore_index, ...])			# Concatenate pandas objects along a particular axis
 ```
 ### Timelike data handling
 ```Python
 to_datetime(arg[, errors, dayfirst, ...])				# Convert argument to datetime
-to_timedelta(arg[, unit, errors])					# A
-date_range([start, end, periods, freq, tz, ...])			# A
+to_timedelta(arg[, unit, errors])					    # A
+date_range([start, end, periods, freq, tz, ...])		# A
 ```
 Examples
 ```Python
