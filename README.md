@@ -240,6 +240,10 @@ We can also combine different files as follows
 ```Python
 df_filter = df[(df["name"] == "A") & (df["weight"].isin([5, -2]))]
 ```
+In addition we can filter via loc as follows
+```Python
+df_filtered = df.loc[(df["name"] == "A") & (df["value"].isin([5]))]
+```
 ### Filling NA values
 In order to fill NA values we can use the following procedure
 ```Python
