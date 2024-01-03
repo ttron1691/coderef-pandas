@@ -207,11 +207,13 @@ df.loc[:, "value"] = df["squared_value"].apply(lambda x: x*x)
 df_assigned_one = df.assign(new_variable="empty")
 df_assigned_two = df.assign(new_column=df["old_column"].apply(my_function))
 df_flag = df.assign(column_flag=df["old_column"].isin(arr_values))
-df_where = df.assign(np.where(df["column_valid"], df["value_valid"], "value_not_valid"))
+
+# Numpy where
+df_where = df_where.assign(new_col=np.where(df["column_valid"], df["value_valid"], "value_not_valid"))
 ```
 We can also include lambda functions as well
 ```Python
-df_lambda = df["new_column"].apply(lambda x: my_function(x) if isinstance(x, str) else "")
+df_lambda["new_column] = df_lambda["existing_column"].apply(lambda x: my_function(x) if isinstance(x, str) else "")
 ```
 ### Rename
 We can rename columns as follows
@@ -233,6 +235,10 @@ df_filter = df[df["name"] == "A"].copy()
 df_filter
 	name	weight	abs	factor	weight_double
 0	A	5	1.25	2.0	10.0
+```
+We can also combine different files as follows
+```Python
+df_filter = df[(df["name"] == "A") & (df["weight"].isin([5, -2]))]
 ```
 ### Filling NA values
 In order to fill NA values we can use the following procedure
