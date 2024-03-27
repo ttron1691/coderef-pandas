@@ -390,9 +390,25 @@ df_concat_cols = pd.concat([df_1, df_2], axis=1)
 ### Timelike data handling
 ```Python
 to_datetime(arg[, errors, dayfirst, ...])				# Convert argument to datetime
-to_timedelta(arg[, unit, errors])					    # A
-date_range([start, end, periods, freq, tz, ...])		# A
+to_timedelta(arg[, unit, errors])					# A
+date_range([start, end, periods, freq, tz, ...])			# A
 ```
+We can specify the following frequencies
+|Alias|Description|
+|-|-|
+|YS|Year start frequency|
+|YE|Year end frequency|
+|M|Monthly frequency|
+|MS|Month start frequency|
+|ME|Month end frequency|
+|W|Weekly frequency|
+|D|Calendar day frequency|
+|B|Business day frequency|
+|h|Hourly frequency|
+|min|Minutely frequency|
+|s|Secondly frequency|
+|ms|Millisecond frequency|
+
 Examples
 ```Python
 pd.to_datetime(['2018-10-26 12:00 -0500', '2018-10-26 13:00 -0500'])
