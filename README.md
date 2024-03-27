@@ -375,6 +375,18 @@ pivot(data, *, columns[, index, values])				    # Return reshaped DataFrame orga
 merge(left, right[, how, on, left_on, ...])				    # Merge DataFrame or named Series objects with a database-style join
 concat(objs, *[, axis, join, ignore_index, ...])			# Concatenate pandas objects along a particular axis
 ```
+### Concatenate Data Frames
+We can concatenate two (or multiple) data frames by using the concat method specifying the relevant axis for concatenation.
+
+#### Append rows
+```Python
+df_concat = pd.concat([df_1, df_2])
+df_concat_rows = pd.concat([df_1, df_2], axis=0)
+```
+#### Append columns
+```Python
+df_concat_cols = pd.concat([df_1, df_2], axis=1)
+```
 ### Timelike data handling
 ```Python
 to_datetime(arg[, errors, dayfirst, ...])				# Convert argument to datetime
