@@ -409,6 +409,12 @@ We can specify the following frequencies
 |s|Secondly frequency|
 |ms|Millisecond frequency|
 
+We can also specify a given number of granularity for the frequency argument, e.g.
+|Alias|Description|
+|-|-|
+|2D|2 calendar days frequency|
+|30min|30 minutes frequency|
+|30s|30 seconds frequency|
 Examples
 ```Python
 pd.to_datetime(['2018-10-26 12:00 -0500', '2018-10-26 13:00 -0500'])
