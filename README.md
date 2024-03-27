@@ -201,7 +201,8 @@ resulting in
 We can use the assign and apply methods to create new columns by applying a function to a given column
 ```Python
 # Loc
-df.loc[:, "squared_value"] = df["value"].apply(lambda x: x*x)
+df.loc[:, "squared_value"] = df["value"].apply(lambda x: x*x)			# Single column
+df.loc[:, "factor_abs"] = df.apply(lambda x: x["factor"]*x["abs"], axis=1)	# Multiple columns
 
 # Assign
 df_assigned_one = df.assign(new_variable="empty")
