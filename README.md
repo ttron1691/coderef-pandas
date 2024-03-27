@@ -416,6 +416,7 @@ We can also specify a given number of granularity for the frequency argument, e.
 |2D|2 calendar days frequency|
 |30min|30 minutes frequency|
 |30s|30 seconds frequency|
+
 Examples
 ```Python
 pd.to_datetime(['2018-10-26 12:00 -0500', '2018-10-26 13:00 -0500'])
@@ -431,6 +432,10 @@ pd.date_range(start='1/1/2018', periods=8)
 # DatetimeIndex(['2018-01-01', '2018-01-02', '2018-01-03', '2018-01-04',
 #                '2018-01-05', '2018-01-06', '2018-01-07', '2018-01-08'],
 #               dtype='datetime64[ns]', freq='D')
+
+pd.date_range(start="2023-01-01", end="2023-12-31")
+# DatetimeIndex(['2023-01-01', '2023-01-02', ..., '2023-12-31'],
+                dtype='datetime64[ns]', length=365, freq='D')
 ```
 ## References
 The pandas documentation can be found on: [https://pandas.pydata.org/docs/index.html](https://pandas.pydata.org/docs/index.html)
