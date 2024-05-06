@@ -210,12 +210,9 @@ df_assigned_two = df.assign(new_column=df["old_column"].apply(my_function))
 df_assigned_three = df.assign(
     weight_abs=lambda x: x["weight"]*x["abs"]
 )
-df_assigned_multiple = (
-    df
-    .assign(year=lambda x: x["timestamp"].dt.year)
-    .assign(month=lambda x: x["timestamp"].dt.month)
-    .assign(day=lambda x: x["timestamp"].dt.day)
-)
+df_assigned_multiple = df.assign(year=lambda x: x["timestamp"].dt.year,
+                                 month=lambda x: x["timestamp"].dt.month,
+                                 day=lambda x: x["timestamp"].dt.day)
 df_flag = df.assign(column_flag=df["old_column"].isin(arr_values))
 
 # Numpy where
