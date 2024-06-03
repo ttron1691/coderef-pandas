@@ -251,6 +251,14 @@ In addition we can filter via loc as follows
 ```Python
 df_filtered = df.loc[(df["name"] == "A") & (df["value"].isin([5]))]
 ```
+We can show duplicate rows via
+```Python
+df_duplicates = df[df.duplicated(subset=["my_column"])]
+```
+We can filter for duplicate values on specific rows via the following code
+```Python
+df_filter_duplicates = df[~df.duplicated(subset=["my_column"])]
+```
 ### Filling NA values
 In order to fill NA values we can use the following procedure
 ```Python
